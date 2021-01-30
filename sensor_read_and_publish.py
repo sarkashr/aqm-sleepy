@@ -47,6 +47,8 @@ try:
             # sensor = SDS011(device_path, use_query_mode=False)
             sensor = None
             print('End of script!')
+#            time.sleep(15)
+#            os.system("sudo shutdown -h now")
             break
         else:
             print("No values read! Waiting for 2 seconds and then will try to read again...")
