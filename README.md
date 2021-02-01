@@ -69,7 +69,7 @@ sudo crontab -e
 ```
 then add the following lines to the crontab file:
 ```
-@reboot python3 /home/pi/aqm-sleepy/sensor_read_and_publish.py
+@reboot python3 /home/pi/aqm-sleepy/sensor_read_and_publish.py &
 ```
 #### Modify the MQTT topic and client_id in aqm.cfg file accordingly:
 ```
@@ -96,6 +96,7 @@ Subscriptions -> Add New Topic Subscription -> <topic_name>
 
 ### Setting up a remoteiot.com new device:
 ```
+sudo apt remove java*
 sudo apt install openjdk-8-jre-headless
 ```
 
@@ -104,6 +105,12 @@ After filling the fields, copy the command line code and execute it with `sudo` 
 Most likely there's already an open SSH session to the RPi for pasting and executing the above copied command.
 
 Note: Java 11, 10 & 9 don't work on Pi Zero because of ARMv6 architecture.
+
+
+An example of a remoteiot SSH connection
+```
+ssh proxy8.remoteiot.com -p 30676 -l 'pi'
+```
 
 --------------------------------------------------------------------------------
 
